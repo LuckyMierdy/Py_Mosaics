@@ -1,0 +1,62 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: white;
+}
+
+a {
+  color: black;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-decoration: none;
+}
+
+.trait {
+  border-bottom: 1px solid black;
+  width: 50%;
+}
+
+.texte-accueil {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.accueil-menu {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 250px;
+  width: 800px;
+  color: white;
+  border-radius: 25px;
+  margin: 10px;
+  background-size: 800px 250px;
+}
+
+@media screen and (max-width: 992px) {
+  #navbar-relative {
+    position: absolute;
+    top: 10px;
+    right: 2rem;
+    background-color: white;
+  }
+}
+
+
+@media screen and (max-width: 1140px) {
+  .accueil-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100px;
+    width: 350px;
+    color: white;
+    border-radius: 25px;
+    margin: 10px;
+    background-size: 350px 100px;
+  }
+}
