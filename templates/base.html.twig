@@ -1,19 +1,88 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<div class="d-flex flex-column">
+				<img src="{{ asset('img/py logo.jpg') }}" class="align-self-center">
+				<h1 class="align-self-center mb-5">Py_Mosaïcs</h1>
+				<nav class="navbar navbar-expand-lg navbar-light align-self-lg-center" id="navbar-relative">
+					<div class="d-flex flex-column align-items-end">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span><img src="{{ asset('img/Menu déroulant.PNG') }}"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav me-auto">
+								<li>
+									<a href="#">Accueil</a>
+								</li>
+								<li>
+									<a href="#">Projets</a>
+								</li>
+								<li>
+									<a href="#">Galerie</a>
+								</li>
+								<li>
+									<a href="#">A propos de moi</a>
+								</li>
+								<li>
+									<a href="#">Évènements</a>
+								</li>
+								<li>
+									<a href="#">Contact</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<div class="d-flex justify-content-center">
+				<div class="trait"></div>
+			</div>
+		</header>
+		{% block body %}{% endblock %}
+		<footer>
+			<div class="d-flex justify-content-center mt-5">
+				<div class="trait"></div>
+			</div>
+			<div class="d-flex justify-content-center">
+				<hr>
+			</div>
+			<div class="d-flex align-items-center justify-content-around">
+				<img src="img/py logo.jpg" alt="">
+				<div class="d-flex flex-column">
+					<a class="lien-footer" href="">Accueil</a>
+					<a class="lien-footer" href="">Projets</a>
+					<a class="lien-footer" href="">Galerie</a>
+					<a class="lien-footer" href="">À propos de moi</a>
+					<a class="lien-footer" href="">Évènements</a>
+					<a class="lien-footer" href="">Contact</a>
+					<p></p>
+				</div>
+				<a href="https://www.instagram.com/py_mosaics/?utm_source=qr">
+					<img src="img/insta-removebg-preview.png" alt="">
+				</a>
+				<a href="https://py-ivy.tumblr.com/">
+					<img src="img/trumbler-removebg-preview.png" alt="">
+				</a>
+			</div>
+		</footer>
+	</body>
 </html>

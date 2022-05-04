@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccueilController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="d-flex justify-content-center">
+		<h2 class="mt-5" id="page-name">Accueil</h2>
+	</div>
+	<div class="d-flex flex-column align-items-center">
+		<div class="accueil-menu" style="background-image: url('img/Accueil/Projet.jpg');">
+			<a class="texte-accueil" href="">Projets</a>
+		</div>
+		<div class="accueil-menu" style="background-image: url('img/Accueil/Galerie.jpg');">
+			<a class="texte-accueil" href="">Galerie</a>
+		</div>
+		<div class="accueil-menu" style="background-image: url('img/Accueil/A propos de moi.jpg');">
+			<a class="texte-accueil" href="">A propos de moi</a>
+		</div>
+		<div class="accueil-menu" style="background-image: url('img/Accueil/Evenements.jpeg');">
+			<a class="texte-accueil" href="">Évènements</a>
+		</div>
+		<div class="accueil-menu" style="background-image: url('img/Accueil/Contact.jpg');">
+			<a class="texte-accueil" href="">Contact</a>
+		</div>
+	</div>
+
+{% endblock %}
