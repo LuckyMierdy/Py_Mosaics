@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
 			{% block title %}Welcome!
 			{% endblock %}
@@ -23,6 +25,18 @@
 			<div class="d-flex flex-column">
 				<img src="{{ asset('img/py logo.jpg') }}" class="align-self-center">
 				<h1 class="align-self-center mb-5">Py_Mosaïcs</h1>
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<p class="login pe-5">
+						Bienvenue
+						{{ app.user.username }}
+						|
+						<a href="{{ path('logout') }}">logout</a>
+					</p>
+				{% else %}
+					<a href="{{ path('login') }}">
+						<img src="{{ asset('img/Bouton login.PNG') }}" class='login' alt="">
+					</a>
+				{% endif %}
 				<nav class="navbar navbar-expand-lg navbar-light align-self-lg-center" id="navbar-relative">
 					<div class="d-flex flex-column align-items-end">
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +45,7 @@
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav me-auto">
 								<li>
-									<a href="#">Accueil</a>
+									<a href="{{ path('app_accueil') }}">Accueil</a>
 								</li>
 								<li>
 									<a href="#">Projets</a>
@@ -56,6 +70,14 @@
 			<div class="d-flex justify-content-center">
 				<div class="trait"></div>
 			</div>
+			{% if is_granted('ROLE_GERANT') %}
+				<div class="d-flex justify-content-center pt-2">
+					<a href="{{ path('app_projet_index') }}">Gestion des projets</a>
+					<a href="">Gestion de la galerie</a>
+					<a href="">Gestion à propos de moi</a>
+					<a href="">Gestion des évènements</a>
+				</div>
+			{% endif %}
 		</header>
 		{% block body %}{% endblock %}
 		<footer>
@@ -68,7 +90,7 @@
 			<div class="d-flex align-items-center justify-content-around">
 				<img src="img/py logo.jpg" alt="">
 				<div class="d-flex flex-column">
-					<a class="lien-footer" href="">Accueil</a>
+					<a class="lien-footer" href="{{ path('app_accueil') }}">Accueil</a>
 					<a class="lien-footer" href="">Projets</a>
 					<a class="lien-footer" href="">Galerie</a>
 					<a class="lien-footer" href="">À propos de moi</a>

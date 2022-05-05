@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter
+{% endblock %}
+
+{% block body %}
+	<div class="d-flex justify-content-center">
+		<h2 class="mt-5" id="page-name">Se connecter</h2>
+	</div>
+	<form class='d-flex flex-column align-items-center' style='width: 100%;' action="{{ path('login') }}" method="post">
+		<div class="d-flex flex-column justify-content-start">
+			<label class='ps-2 pt-3' for="username">Email :</label>
+			<input type="text" id="username" name="_username" value="{{ last_username|default('') }}"/>
+		</div>
+		<div class="d-flex flex-column justify-content-start">
+			<label class='ps-2 pt-3' for="password">Mot de passe :</label>
+			<input type="password" id="password" name="_password"/>
+		</div>
+		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+		<input type="hidden" name="_target_path" value="{{ path('app_accueil') }}"/>
+		<button class='button my-4' type="submit">Connexion</button>
+		<a href="{{ path('app_register') }}">S'enregistrer</a>
+	</form>
+
+{% endblock %}
