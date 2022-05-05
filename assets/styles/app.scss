@@ -7,6 +7,13 @@ a {
   text-decoration: none;
 }
 
+#navbar-relative {
+  position: fixed;
+  top: 10px;
+  left: 2rem;
+  background-color: white;
+}
+
 .trait {
   border-bottom: 1px solid black;
   width: 50%;
@@ -28,8 +35,9 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 250px;
-  width: 800px;
+  height: 100px;
+  width: 350px;
+  background-size: 100% auto;
   color: white;
   border-radius: 25px;
   margin: 10px;
@@ -63,24 +71,37 @@ a {
   background-color: #ffa940;
 }
 
-@media screen and (max-width: 992px) {
-  #navbar-relative {
-    position: fixed;
-    top: 10px;
-    left: 2rem;
-    background-color: white;
-  }
-}
-
-
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 991px) {
   .accueil-menu {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100px;
-    width: 350px;
+    height: 180px;
+    width: 500px;
+    background-size: 100% auto;
+    color: white;
+    border-radius: 25px;
+    margin: 10px;
+    background-size: 350px 100px;
+  }
+
+  #navbar-relative {
+    position: static;
+    background-color: white;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .accueil-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 250px;
+    width: 800px;
+    background-size: auto auto;
     color: white;
     border-radius: 25px;
     margin: 10px;
