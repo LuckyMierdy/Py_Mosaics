@@ -1,62 +1,61 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projet{% endblock %}
+{% block title %}Projet
+{% endblock %}
 
 {% block body %}
-    <h1>Projet</h1>
+	<h2 class="text-center mt-5">Projet</h2>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ projet.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ projet.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ projet.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ projet.image }}</td>
-            </tr>
-            <tr>
-                <th>Image2</th>
-                <td>{{ projet.image2 }}</td>
-            </tr>
-            <tr>
-                <th>Image3</th>
-                <td>{{ projet.image3 }}</td>
-            </tr>
-            <tr>
-                <th>Image4</th>
-                <td>{{ projet.image4 }}</td>
-            </tr>
-            <tr>
-                <th>Image5</th>
-                <td>{{ projet.image5 }}</td>
-            </tr>
-            <tr>
-                <th>Image6</th>
-                <td>{{ projet.image6 }}</td>
-            </tr>
-            <tr>
-                <th>Image7</th>
-                <td>{{ projet.image7 }}</td>
-            </tr>
-            <tr>
-                <th>Description2</th>
-                <td>{{ projet.description2 }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_projet_index') }}">back to list</a>
-
-    <a href="{{ path('app_projet_edit', {'id': projet.id}) }}">edit</a>
-
-    {{ include('projet/_delete_form.html.twig') }}
+	<div class="mb-4">
+		<div class="d-flex justify-content-center">
+			<div class="p-3">
+				<div class="d-flex">
+					<div class="d-flex flex-column justify-content-center">
+						<div class='projet_image1'><img class="img_show" src="{{ asset('uploads/' ~ projet.image) }}"/></div>
+					</div>
+					<div class="d-flex flex-column">
+						<div class="d-flex flex-column justify-content-center">
+							<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/' ~ projet.image2) }}"/></div>
+						</div>
+						<div class="d-flex flex-column justify-content-center">
+							<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/' ~ projet.image3) }}"/></div>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<div class='projet_image4'><img class="img_show" src="{{ asset('uploads/' ~ projet.image4) }}"/></div>
+				</div>
+			</div>
+			<div class="description_box p-2">
+				<div class='ps-2'>
+					<h4>{{ projet.title }}, ID :
+						{{ projet.id }}</h4>
+				</div>
+				<div class='d-flex align-items-center justify-content-center description_box ps-2'>{{ projet.description }}</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-center align-items-center">
+			<div class="d-flex align-items-center justify-content-center description_box p-2">
+				<div class='ps-2'>{{ projet.description2 }}</div>
+			</div>
+			<div>
+				<div class="d-flex">
+					<div class="d-flex flex-column justify-content-center">
+						<div class='projet_image5'><img class="img_show" src="{{ asset('uploads/' ~ projet.image5) }}"/></div>
+					</div>
+					<div class="d-flex flex-column justify-content-center">
+						<div class='projet_image6'><img class="img_show" src="{{ asset('uploads/' ~ projet.image6) }}"/></div>
+					</div>
+				</div>
+				<div class="d-flex flex-column justify-content-center">
+					<div class='projet_image7'><img class="img_show" src="{{ asset('uploads/' ~ projet.image7) }}"/></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-flex flex-column align-items-center">
+		<a class="my-4 button" href="{{ path('app_projet_edit', {'id': projet.id}) }}">Éditer le projet</a>
+		<a href="{{ path('app_projet_index') }}">Retour à la liste des projet</a>
+		{{ include('projet/_delete_form.html.twig') }}
+	</div>
 {% endblock %}

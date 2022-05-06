@@ -1,53 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Projet index{% endblock %}
+{% block title %}Résumé des projets
+{% endblock %}
 
 {% block body %}
-    <h1>Projet index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th>Image2</th>
-                <th>Image3</th>
-                <th>Image4</th>
-                <th>Image5</th>
-                <th>Image6</th>
-                <th>Image7</th>
-                <th>Description2</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for projet in projets %}
-            <tr>
-                <td>{{ projet.id }}</td>
-                <td>{{ projet.title }}</td>
-                <td>{{ projet.description }}</td>
-                <td>{{ projet.image }}</td>
-                <td>{{ projet.image2 }}</td>
-                <td>{{ projet.image3 }}</td>
-                <td>{{ projet.image4 }}</td>
-                <td>{{ projet.image5 }}</td>
-                <td>{{ projet.image6 }}</td>
-                <td>{{ projet.image7 }}</td>
-                <td>{{ projet.description2 }}</td>
-                <td>
-                    <a href="{{ path('app_projet_show', {'id': projet.id}) }}">show</a>
-                    <a href="{{ path('app_projet_edit', {'id': projet.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="12">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_projet_new') }}">Create new</a>
-{% endblock %}
+	<h2 class="text-center mt-5 pb-3">Résumé des projets</h2>
+	<div class="row border-bottom">
+		<div class="col-1 text-center"></div>
+		<div class="col-1 text-center">
+			<h5>ID</h5>
+		</div>
+		<div class="col-1 text-center">
+			<h5>Titre du projet</h5>
+		</div>
+		<div class="col-3 text-center">
+			<h5>Description1</h5>
+		</div>
+		<div class="col-3 text-center">
+			<h5>Description2</h5>
+		</div>
+		<div class="col-2 text-center">
+			<h5>actions</h5>
+		</div>
+		<div class="col-1"></div>
+	</div>
+	{% for projet in projets %}
+		<div class="row border-bottom py-2">
+			<div class="col-1 text-center"></div>
+			<div class="col-1 text-center">{{ projet.id }}</div>
+			<div class="col-1 text-center">{{ projet.title }}</div>
+			<div class="col-3 text-center">{{ projet.description }}</div>
+			<div class="col-3 text-center">{{ projet.description2 }}</div>
+			<div class="col-2 d-flex flex-column align-items-center">
+				<a class="button mt-4" href="{{ path('app_projet_show', {'id': projet.id}) }}">Voir le projet</a>
+				<a class="button mt-4" href="{{ path('app_projet_edit', {'id': projet.id}) }}">Éditer le projet</a>
+				{{ include('projet/_delete_form.html.twig') }}
+			</div>
+			<div class="mt-4 col-1"></div>
+		</div>
+	{% else %}
+		<div class="text-center" colspan="12">Pas de projet</div>
+	{% endfor %}
+</tbody></table><div class="d-flex justify-content-center">
+<a class="button my-4" href="{{ path('app_projet_new') }}">Créer un nouveau projet</a></div>{% endblock %}

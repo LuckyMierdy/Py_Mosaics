@@ -7,6 +7,11 @@ a {
   text-decoration: none;
 }
 
+.projet_image {
+  width: 350px;
+  height: 350px;
+}
+
 #navbar-relative {
   position: fixed;
   top: 10px;
@@ -19,7 +24,14 @@ a {
   width: 50%;
 }
 
+.accueil_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+
 .texte-accueil {
+  position: absolute;
   font-size: 1.5rem;
   text-decoration: none;
   color: white;
@@ -37,7 +49,6 @@ a {
   text-align: center;
   height: 100px;
   width: 350px;
-  background-size: 100% auto;
   color: white;
   border-radius: 25px;
   margin: 10px;
@@ -71,15 +82,84 @@ a {
   background-color: #ffa940;
 }
 
+.upload_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.description_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+}
+
+.description_size {
+  width: 400px;
+  height: 400px;
+}
+
+.projet_image1 {
+  border: solid 1px black;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.projet_image2_3 {
+  border: solid 1px black;
+  width: 100px;
+  height: 125px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.projet_image4 {
+  border: solid 1px black;
+  width: 450px;
+  height: 100px;
+  margin-top: 25px;
+}
+
+.projet_image5 {
+  border: solid 1px black;
+  width: 300px;
+  height: 200px;
+  margin-top: 50px;
+  margin-right: 25px;
+}
+
+.projet_image6 {
+  border: solid 1px black;
+  width: 100px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.projet_image7 {
+  border: solid 1px black;
+  width: 450px;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.img_show {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (min-width: 991px) {
   .accueil-menu {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 180px;
+    height: 165px;
     width: 500px;
-    background-size: 100% auto;
     color: white;
     border-radius: 25px;
     margin: 10px;
@@ -101,7 +181,6 @@ a {
     text-align: center;
     height: 250px;
     width: 800px;
-    background-size: auto auto;
     color: white;
     border-radius: 25px;
     margin: 10px;
