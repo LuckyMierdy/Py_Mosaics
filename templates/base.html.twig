@@ -80,7 +80,7 @@
 					<a href="">Gestion des évènements</a>
 				{% endif %}
 				{% if is_granted('ROLE_ADMIN') %}
-					<a href="">Créer un gérant</a>
+					<a href="{{ path('app_gerant_registration') }}">Créer un gérant</a>
 				{% endif %}
 			</div>
 		</header>
