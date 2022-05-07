@@ -56,11 +56,11 @@
 									<a href="#">Galerie</a>
 								</li>
 								<li>
-									<a href="#">A propos de moi</a>
+									<a href="{{ path('app_a_propos_de_moi') }}">A propos de moi</a>
 								</li>
-								<li>
-									<a href="#">Évènements</a>
-								</li>
+								{# <li>
+																	<a href="#">Évènements</a>
+																</li> #}
 								<li>
 									<a href="#">Contact</a>
 								</li>
@@ -77,7 +77,7 @@
 					<a href="{{ path('app_projet_index') }}">Gestion des projets</a>
 					<a href="">Gestion de la galerie</a>
 					<a href="">Gestion à propos de moi</a>
-					<a href="">Gestion des évènements</a>
+					{# <a href="">Gestion des évènements</a> #}
 				{% endif %}
 				{% if is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('app_gerant_registration') }}">Créer un gérant</a>
@@ -98,8 +98,8 @@
 					<a class="lien-footer" href="{{ path('app_accueil') }}">Accueil</a>
 					<a class="lien-footer" href="{{ path('app_projet_catalogue') }}">Projets</a>
 					<a class="lien-footer" href="">Galerie</a>
-					<a class="lien-footer" href="">À propos de moi</a>
-					<a class="lien-footer" href="">Évènements</a>
+					<a class="lien-footer" href="{{ path('app_a_propos_de_moi') }}">À propos de moi</a>
+					{# <a class="lien-footer" href="">Évènements</a> #}
 					<a class="lien-footer" href="">Contact</a>
 					<p></p>
 				</div>
