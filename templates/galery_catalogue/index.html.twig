@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie
+{% endblock %}
+
+{% block body %}
+	<div class="d-flex justify-content-center">
+		<h2 class="mt-5" id="page-name">Galerie</h2>
+	</div>
+	{% for galery in galeries %}
+		<div class="d-flex justify-content-center pt-3">
+			<div class="container_galery">
+				<div class="galery_pos_img1"><img class="img_galery_size" src="{{ asset('uploads/galerie/' ~ galery.image1) }}"></div>
+				<div class="galery_pos_img2"><img class="img_galery_size" src="{{ asset('uploads/galerie/' ~ galery.image2) }}"></div>
+				<div class="galery_pos_img3"><img class="img_galery_size" src="{{ asset('uploads/galerie/' ~ galery.image3) }}"></div>
+			</div>
+			<div class="d-flex justify-content-center align-items-center" style="width: 150px;">
+				<p>{{ galery.title }}</p>
+			</div>
+		</div>
+	{% else %}
+		<p class="text-center">Aucune image trouvé</p>
+	{% endfor %}
+{% endblock %}
