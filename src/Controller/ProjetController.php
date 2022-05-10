@@ -39,7 +39,7 @@ class ProjetController extends AbstractController
 
         try {
           $image->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -57,7 +57,7 @@ class ProjetController extends AbstractController
 
         try {
           $image2->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -75,7 +75,7 @@ class ProjetController extends AbstractController
 
         try {
           $image3->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -93,7 +93,7 @@ class ProjetController extends AbstractController
 
         try {
           $image4->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -111,7 +111,7 @@ class ProjetController extends AbstractController
 
         try {
           $image5->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -129,7 +129,7 @@ class ProjetController extends AbstractController
 
         try {
           $image6->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -147,7 +147,7 @@ class ProjetController extends AbstractController
 
         try {
           $image7->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -191,7 +191,7 @@ class ProjetController extends AbstractController
 
         try {
           $image->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -209,7 +209,7 @@ class ProjetController extends AbstractController
 
         try {
           $image2->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -227,7 +227,7 @@ class ProjetController extends AbstractController
 
         try {
           $image3->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -245,7 +245,7 @@ class ProjetController extends AbstractController
 
         try {
           $image4->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -263,7 +263,7 @@ class ProjetController extends AbstractController
 
         try {
           $image5->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -281,7 +281,7 @@ class ProjetController extends AbstractController
 
         try {
           $image6->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -299,7 +299,7 @@ class ProjetController extends AbstractController
 
         try {
           $image7->move(
-            $this->getParameter('kernel.project_dir') . '/public/uploads',
+            $this->getParameter('kernel.project_dir') . '/public/uploads/projets',
             $newFilename
           );
         } catch (FileException $e) {
@@ -333,13 +333,13 @@ class ProjetController extends AbstractController
       $projetRepository->remove($projet);
 
       $fs = new Filesystem();
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename2);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename3);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename4);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename5);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename6);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/' . $filename7);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename2);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename3);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename4);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename5);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename6);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename7);
     }
 
     return $this->redirectToRoute('app_projet_index', [], Response::HTTP_SEE_OTHER);

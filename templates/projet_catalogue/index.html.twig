@@ -13,19 +13,19 @@
 				<div class="p-3">
 					<div class="d-flex">
 						<div class="d-flex flex-column justify-content-center">
-							<div class='projet_image1'><img class="img_show" src="{{ asset('uploads/' ~ projet.image) }}"/></div>
+							<div class='projet_image1'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image) }}"/></div>
 						</div>
 						<div class="d-flex flex-column">
 							<div class="d-flex flex-column justify-content-center">
-								<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/' ~ projet.image2) }}"/></div>
+								<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image2) }}"/></div>
 							</div>
 							<div class="d-flex flex-column justify-content-center">
-								<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/' ~ projet.image3) }}"/></div>
+								<div class='projet_image2_3'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image3) }}"/></div>
 							</div>
 						</div>
 					</div>
 					<div class="d-flex flex-column justify-content-center">
-						<div class='projet_image4'><img class="img_show" src="{{ asset('uploads/' ~ projet.image4) }}"/></div>
+						<div class='projet_image4'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image4) }}"/></div>
 					</div>
 				</div>
 				<div class="description_box p-2">
@@ -42,19 +42,19 @@
 				<div>
 					<div class="d-flex">
 						<div class="d-flex flex-column justify-content-center">
-							<div class='projet_image5'><img class="img_show" src="{{ asset('uploads/' ~ projet.image5) }}"/></div>
+							<div class='projet_image5'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image5) }}"/></div>
 						</div>
 						<div class="d-flex flex-column justify-content-center">
-							<div class='projet_image6'><img class="img_show" src="{{ asset('uploads/' ~ projet.image6) }}"/></div>
+							<div class='projet_image6'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image6) }}"/></div>
 						</div>
 					</div>
 					<div class="d-flex flex-column justify-content-center">
-						<div class='projet_image7'><img class="img_show" src="{{ asset('uploads/' ~ projet.image7) }}"/></div>
+						<div class='projet_image7'><img class="img_show" src="{{ asset('uploads/projets/' ~ projet.image7) }}"/></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	{% else %}
-		<p>Aucun projet trouvé</p>
+		<p class="text-center">Aucun projet trouvé</p>
 	{% endfor %}
 {% endblock %}
