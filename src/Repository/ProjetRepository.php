@@ -18,39 +18,39 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProjetRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Projet::class);
-    }
+  public function __construct(ManagerRegistry $registry)
+  {
+    parent::__construct($registry, Projet::class);
+  }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
-    public function add(Projet $entity, bool $flush = true): void
-    {
-        $this->_em->persist($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
+  /**
+   * @throws ORMException
+   * @throws OptimisticLockException
+   */
+  public function add(Projet $entity, bool $flush = true): void
+  {
+    $this->_em->persist($entity);
+    if ($flush) {
+      $this->_em->flush();
     }
+  }
 
-    /**
-     * @throws ORMException
-     * @throws OptimisticLockException
-     */
-    public function remove(Projet $entity, bool $flush = true): void
-    {
-        $this->_em->remove($entity);
-        if ($flush) {
-            $this->_em->flush();
-        }
+  /**
+   * @throws ORMException
+   * @throws OptimisticLockException
+   */
+  public function remove(Projet $entity, bool $flush = true): void
+  {
+    $this->_em->remove($entity);
+    if ($flush) {
+      $this->_em->flush();
     }
+  }
 
-    // /**
-    //  * @return Projet[] Returns an array of Projet objects
-    //  */
-    /*
+  // /**
+  //  * @return Projet[] Returns an array of Projet objects
+  //  */
+  /*
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('p')
@@ -64,7 +64,7 @@ class ProjetRepository extends ServiceEntityRepository
     }
     */
 
-    /*
+  /*
     public function findOneBySomeField($value): ?Projet
     {
         return $this->createQueryBuilder('p')

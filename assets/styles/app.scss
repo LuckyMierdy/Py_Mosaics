@@ -147,6 +147,13 @@ a {
   height: 100%;
 }
 
+.galery_img_show {
+  border: solid 1px black;
+  width: 300px;
+  height: 150px;
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 991px) {
   .accueil-menu {
     display: flex;

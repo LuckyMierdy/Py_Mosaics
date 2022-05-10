@@ -5,12 +5,14 @@ namespace App\Controller;
 use App\Entity\Projet;
 use App\Form\ProjetType;
 use App\Repository\ProjetRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\Persistence\ManagerRegistry;
 
 #[Route('gerant/projet')]
 class ProjetController extends AbstractController
@@ -24,7 +26,7 @@ class ProjetController extends AbstractController
   }
 
   #[Route('/new', name: 'app_projet_new', methods: ['GET', 'POST'])]
-  public function new(Request $request, ProjetRepository $projetRepository): Response
+  public function new(Request $request, ProjetRepository $projetRepository, ManagerRegistry $doctrine): Response
   {
     $projet = new Projet();
     $form = $this->createForm(ProjetType::class, $projet);
@@ -187,7 +189,7 @@ class ProjetController extends AbstractController
       $image = $form->get('image')->getData();
 
       if ($image) {
-        $newFilename = uniqid() . '.' . $image->guessExtension();
+        $newFilename = $projet->getImage();
 
         try {
           $image->move(
@@ -205,7 +207,7 @@ class ProjetController extends AbstractController
       $image2 = $form->get('image2')->getData();
 
       if ($image2) {
-        $newFilename = uniqid() . '.' . $image2->guessExtension();
+        $newFilename = $projet->getImage2();
 
         try {
           $image2->move(
@@ -223,7 +225,7 @@ class ProjetController extends AbstractController
       $image3 = $form->get('image3')->getData();
 
       if ($image3) {
-        $newFilename = uniqid() . '.' . $image3->guessExtension();
+        $newFilename = $projet->getImage3();
 
         try {
           $image3->move(
@@ -241,7 +243,7 @@ class ProjetController extends AbstractController
       $image4 = $form->get('image4')->getData();
 
       if ($image4) {
-        $newFilename = uniqid() . '.' . $image4->guessExtension();
+        $newFilename = $projet->getImage4();
 
         try {
           $image4->move(
@@ -259,7 +261,7 @@ class ProjetController extends AbstractController
       $image5 = $form->get('image5')->getData();
 
       if ($image5) {
-        $newFilename = uniqid() . '.' . $image5->guessExtension();
+        $newFilename = $projet->getImage5();
 
         try {
           $image5->move(
@@ -277,7 +279,7 @@ class ProjetController extends AbstractController
       $image6 = $form->get('image6')->getData();
 
       if ($image6) {
-        $newFilename = uniqid() . '.' . $image6->guessExtension();
+        $newFilename = $projet->getImage6();
 
         try {
           $image6->move(
@@ -295,7 +297,7 @@ class ProjetController extends AbstractController
       $image7 = $form->get('image7')->getData();
 
       if ($image7) {
-        $newFilename = uniqid() . '.' . $image7->guessExtension();
+        $newFilename = $projet->getImage7();
 
         try {
           $image7->move(
@@ -320,7 +322,7 @@ class ProjetController extends AbstractController
   }
 
   #[Route('/{id}', name: 'app_projet_delete', methods: ['POST'])]
-  public function delete(Request $request, Projet $projet, ProjetRepository $projetRepository): Response
+  public function delete(Request $request, Projet $projet, EntityManagerInterface $entityManager): Response
   {
     if ($this->isCsrfTokenValid('delete' . $projet->getId(), $request->request->get('_token'))) {
       $filename = $projet->getImage();
@@ -330,16 +332,17 @@ class ProjetController extends AbstractController
       $filename5 = $projet->getImage5();
       $filename6 = $projet->getImage6();
       $filename7 = $projet->getImage7();
-      $projetRepository->remove($projet);
+      $entityManager->remove($projet);
+      $entityManager->flush();
 
       $fs = new Filesystem();
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename2);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename3);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename4);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename5);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename6);
-      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets' . $filename7);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename2);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename3);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename4);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename5);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename6);
+      $fs->remove($this->getParameter('kernel.project_dir') . '/public/uploads/projets/' . $filename7);
     }
 
     return $this->redirectToRoute('app_projet_index', [], Response::HTTP_SEE_OTHER);

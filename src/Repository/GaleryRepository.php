@@ -2,32 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Galerie;
+use App\Entity\Galery;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Galerie>
+ * @extends ServiceEntityRepository<Galery>
  *
- * @method Galerie|null find($id, $lockMode = null, $lockVersion = null)
- * @method Galerie|null findOneBy(array $criteria, array $orderBy = null)
- * @method Galerie[]    findAll()
- * @method Galerie[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Galery|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Galery|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Galery[]    findAll()
+ * @method Galery[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class GalerieRepository extends ServiceEntityRepository
+class GaleryRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Galerie::class);
+        parent::__construct($registry, Galery::class);
     }
 
     /**
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function add(Galerie $entity, bool $flush = false): void
+    public function add(Galery $entity, bool $flush = false): void
     {
         $this->_em->persist($entity);
         if ($flush) {
@@ -39,7 +39,7 @@ class GalerieRepository extends ServiceEntityRepository
      * @throws ORMException
      * @throws OptimisticLockException
      */
-    public function remove(Galerie $entity, bool $flush = false): void
+    public function remove(Galery $entity, bool $flush = false): void
     {
         $this->_em->remove($entity);
         if ($flush) {
@@ -48,7 +48,7 @@ class GalerieRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Galerie[] Returns an array of Galerie objects
+//     * @return Galery[] Returns an array of Galery objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -62,7 +62,7 @@ class GalerieRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Galerie
+//    public function findOneBySomeField($value): ?Galery
 //    {
 //        return $this->createQueryBuilder('g')
 //            ->andWhere('g.exampleField = :val')

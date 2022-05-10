@@ -1,0 +1,23 @@
+{{ form_start(form) }}
+<div class="d-flex flex-column">
+	<div class="d-flex flex-column justify-content-center py-2">
+		<label class="ps-2">Titre de la galerie :</label>
+		{{ form_widget(form.title, {label: ' '}) }}
+	</div>
+	<div class="d-flex flex-column justify-content-center py-2">
+		<label class="ps-2">Image 1 :</label>
+		{{ form_widget(form.image1, {label: ' '}) }}
+	</div>
+	<div class="d-flex flex-column justify-content-center py-2">
+		<label class="ps-2">Image 2 :</label>
+		{{ form_widget(form.image2, {label: ' '}) }}
+	</div>
+	<div class="d-flex flex-column justify-content-center py-2">
+		<label class="ps-2">Image 3 :</label>
+		{{ form_widget(form.image3, {label: ' '}) }}
+	</div>
+</div>
+<div class="d-flex justify-content-center my-4">
+	<button class="button">{{ button_label|default('Sauvegarder') }}</button>
+</div>
+{{ form_end(form) }}

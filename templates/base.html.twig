@@ -59,8 +59,8 @@
 									<a href="{{ path('app_a_propos_de_moi') }}">A propos de moi</a>
 								</li>
 								{# <li>
-																									<a href="#">Évènements</a>
-																								</li> #}
+																																	<a href="#">Évènements</a>
+																																</li> #}
 								<li>
 									<a href="#">Contact</a>
 								</li>
@@ -75,7 +75,7 @@
 			<div class="d-flex flex-column flex-lg-row align-items-center justify-content-center pt-2">
 				{% if is_granted('ROLE_GERANT') %}
 					<a href="{{ path('app_projet_index') }}">Gestion des projets</a>
-					<a href="{{ path('app_galerie_index') }}">Gestion de la galerie</a>
+					<a href="{{ path('app_galery_index') }}">Gestion de la galerie</a>
 					{# <a href="">Gestion à propos de moi</a> #}
 					{# <a href="">Gestion des évènements</a> #}
 				{% endif %}

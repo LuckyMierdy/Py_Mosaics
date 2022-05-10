@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie index
+{% endblock %}
+
+{% block body %}
+	<h2 class="text-center mt-5 pb-3">Galerie index</h2>
+
+	<div class="container">
+		<div class="row border-bottom">
+			<div class="col-2"></div>
+			<p class="text-center col-2">ID</p>
+			<p class="text-center col-3">Titre</p>
+			<p class="text-center col-4">actions</p>
+			<div class="col-1"></div>
+		</div>
+	</div>
+	{% for galery in galeries %}
+		<div class="container">
+			<div class="row d-flex align-items-center border-bottom">
+				<div class="col-2"></div>
+				<p class="text-center col-2">{{ galery.id }}</p>
+				<p class="text-center col-3">{{ galery.title }}</p>
+				<div class="text-center col-4">
+					<a class="button my-3" href="{{ path('app_galery_show', {'id': galery.id}) }}">Montrer la galerie</a>
+					<a class="button my-3" href="{{ path('app_galery_edit', {'id': galery.id}) }}">Éditer la galerie</a>
+				</div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+	{% else %}
+
+		<p class="text-center">Pas de galerie trouvé</p>
+
+	{% endfor %}
+	<div class="d-flex justify-content-center">
+		<a class="button my-4" href="{{ path('app_galery_new') }}">Créer une nouvelle galerie</a>
+	</div>
+{% endblock %}
