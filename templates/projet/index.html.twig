@@ -41,5 +41,7 @@
 	{% else %}
 		<div class="text-center" colspan="12">Pas de projet</div>
 	{% endfor %}
-</tbody></table><div class="d-flex justify-content-center">
-<a class="button my-4" href="{{ path('app_projet_new') }}">Créer un nouveau projet</a></div>{% endblock %}
+	<div class="d-flex justify-content-center">
+		<a class="button my-4" href="{{ path('app_projet_new') }}">Créer un nouveau projet</a>
+	</div>
+{% endblock %}
