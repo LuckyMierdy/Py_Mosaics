@@ -197,8 +197,23 @@ a {
 
 .container_galery {
   position: relative;
-  width: 200px;
+  width: 150px;
   height: 110px;
+}
+
+.contact_user_email {
+  width: 150px;
+  height: 30px;
+}
+
+.contact_subject {
+  width: 310px;
+  height: 30px;
+}
+
+.contact_message {
+  width: 310px;
+  height: 150px;
 }
 
 @media screen and (min-width: 991px) {
@@ -297,8 +312,22 @@ a {
     width: 400px;
     height: 220px;
   }
-}
 
+  .contact_user_email {
+    width: 200px;
+    height: 30px;
+  }
+
+  .contact_subject {
+    width: 420px;
+    height: 30px;
+  }
+
+  .contact_message {
+    width: 420px;
+    height: 200px;
+  }
+}
 
 @media screen and (min-width: 1200px) {
   .accueil-menu {

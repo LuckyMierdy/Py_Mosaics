@@ -1,11 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!
+{% block title %}Contact
 {% endblock %}
 
 {% block body %}
 	<h2 class="text-center mt-5">Contact</h2>
 
 	{{ form_start(form) }}
+	<div class="d-flex flex-column align-items-center">
+		<div class="d-flex">
+			<div class="d-flex flex-column justify-content-center py-2 me-2">
+				<label class="ps-2">Nom d'utilisateur :</label>
+				{{ form_widget(form.username, {label: ' '}) }}
+			</div>
+			<div class="d-flex flex-column justify-content-center py-2 ms-2">
+				<label class="ps-2">Email :</label>
+				{{ form_widget(form.email, {label: ' '}) }}
+			</div>
+		</div>
+		<div class="d-flex flex-column justify-content-center py-2">
+			<label class="ps-2">Sujet :</label>
+			{{ form_widget(form.subject, {label: ' '}) }}
+		</div>
+		<div class="d-flex flex-column justify-content-center py-2">
+			<label class="ps-2">Message :</label>
+			{{ form_widget(form.message, {label: ' '}) }}
+		</div>
+	</div>
+	<div class="d-flex justify-content-center my-4">
+		<button class="button">{{ button_label|default('Envoyer') }}</button>
+	</div>
 	{{ form_end(form) }}
 {% endblock %}
