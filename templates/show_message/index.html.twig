@@ -1,20 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ShowMessageController!{% endblock %}
+{% block title %}Messages
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'E:/Dossier_projet/src/Controller/ShowMessageController.php'|file_link(0) }}">src/Controller/ShowMessageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'E:/Dossier_projet/templates/show_message/index.html.twig'|file_link(0) }}">templates/show_message/index.html.twig</a></code></li>
-    </ul>
-</div>
+	<div class="d-flex justify-content-center">
+		<h2 class="mt-5" id="page-name">Mes messages</h2>
+	</div>
+	{% for message in messages %}
+		<div class="d-flex flex-column flex-lg-row justify-content-center m-3">
+			<div class="d-flex flex-column align-items-center me-4">
+				<div>Nom d'utilisateur :
+					{{ message.username }}</div>
+				<div>Email :
+					{{ message.email }}</div>
+				<div>Sujet :
+					{{ message.subject }}</div>
+			</div>
+			<div class="text-center" style="width: 340px;">{{ message.message }}</div>
+		</div>
+	{% else %}
+		<p class="text-center">Aucun message trouvé</p>
+	{% endfor %}
 {% endblock %}
