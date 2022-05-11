@@ -1,5 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 
+.is_connected {
+  position: static;
+}
+
+.is_not_connected {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
 a {
   color: black;
   padding-left: 1em;
@@ -53,12 +63,6 @@ a {
   border-radius: 25px;
   margin: 10px;
   background-size: 800px 250px;
-}
-
-.login {
-  position: absolute;
-  top: 20px;
-  right: 2rem;
 }
 
 .button {
@@ -198,6 +202,12 @@ a {
 }
 
 @media screen and (min-width: 991px) {
+  .is_connected {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+  }
+
   .accueil-menu {
     display: flex;
     align-items: center;
