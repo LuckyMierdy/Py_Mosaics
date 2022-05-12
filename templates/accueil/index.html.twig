@@ -12,23 +12,23 @@
 	<div class="d-flex flex-column align-items-center">
 		<div class="accueil-menu">
 			<img class="accueil_img" src="{{ asset('img/Accueil/Projet.jpg') }}">
-			<a class="texte-accueil" href="">Projets</a>
+			<a class="texte-accueil" href="{{ path('app_projet_catalogue') }}">Projets</a>
 		</div>
 		<div class="accueil-menu">
 			<img class="accueil_img" src="{{ asset('img/Accueil/Galerie.jpg') }}">
-			<a class="texte-accueil" href="">Galerie</a>
+			<a class="texte-accueil" href="{{ path('app_galery_catalogue') }}">Galerie</a>
 		</div>
 		<div class="accueil-menu">
 			<img class="accueil_img" src="{{ asset('img/Accueil/A propos de moi.jpg') }}">
-			<a class="texte-accueil" href="">A propos de moi</a>
+			<a class="texte-accueil" href="{{ path('app_a_propos_de_moi') }}">A propos de moi</a>
 		</div>
 		{# <div class="accueil-menu">
-			<img class="accueil_img" src="{{ asset('img/Accueil/Evenements.jpg') }}">
-			<a class="texte-accueil" href="">Évènements</a>
-		</div> #}
+					<img class="accueil_img" src="{{ asset('img/Accueil/Evenements.jpg') }}">
+					<a class="texte-accueil" href="">Évènements</a>
+				</div> #}
 		<div class="accueil-menu">
 			<img class="accueil_img" src="{{ asset('img/Accueil/Contact.jpg') }}">
-			<a class="texte-accueil" href="">Contact</a>
+			<a class="texte-accueil" href="{{ path('app_contact') }}">Contact</a>
 		</div>
 	</div>
 {% endblock %}
