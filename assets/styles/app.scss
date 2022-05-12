@@ -49,11 +49,11 @@ a {
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .texte-accueil:hover {
-  color: black;
+  color: white;
 }
 
 .accueil-menu {
@@ -191,8 +191,8 @@ a {
 
 .galery_pos_img3 {
   position: absolute;
-  left: 20%;
-  top: 10%;
+  left: 40%;
+  top: 20%;
   z-index: 1;
 }
 
@@ -202,7 +202,7 @@ a {
 
 .container_galery {
   position: relative;
-  width: 150px;
+  width: 200px;
   height: 110px;
 }
 
